@@ -3,6 +3,16 @@ package org.example;
 public class Radio {
     private int radioWave;
     private int currentVolume;
+    private int maxStation;
+
+
+    public Radio() {
+        maxStation = 9;
+    }
+
+    public Radio(int stationsCount) {
+        maxStation = stationsCount -1;
+    }
 
     public int getradioWave() {
         return radioWave;
@@ -12,7 +22,7 @@ public class Radio {
         if (radioWave < 0) {
             return;
         }
-        if (radioWave > 9) {
+        if (radioWave > maxStation) {
             return;
         }
         this.radioWave = radioWave;
@@ -26,14 +36,14 @@ public class Radio {
         if (currentVolume < 0) {
             return;
         }
-        if (currentVolume > 10) {
+        if (currentVolume > 100) {
             return;
         }
         this.currentVolume = currentVolume;
     }
 
     public void next() {
-        if (radioWave != 9) {
+        if (radioWave != maxStation) {
             radioWave++;
         } else {
             radioWave = 0;
@@ -44,12 +54,12 @@ public class Radio {
         if (radioWave != 0) {
             radioWave--;
         } else {
-            radioWave = 9;
+            radioWave = maxStation;
         }
     }
 
     public void nextVolume() {
-        if (currentVolume != 10) {
+        if (currentVolume != 100) {
             currentVolume++;
         } else {
             return;
