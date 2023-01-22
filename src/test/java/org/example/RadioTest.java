@@ -128,7 +128,7 @@ public class RadioTest {
     @Test
     public void cecurrentVolumeOutsideMax() {
         Radio radio = new Radio();
-        radio.setcurrentVolume(11);
+        radio.setcurrentVolume(101);
         int actual = radio.getcurrentVolume();
         int expected = 0;
         Assertions.assertEquals(expected,actual);
