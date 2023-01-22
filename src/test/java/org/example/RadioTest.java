@@ -141,5 +141,13 @@ public class RadioTest {
         int expected = 0;
         Assertions.assertEquals(expected,actual);
     }
+    @Test
+    public void choiceRadioWave() {
+        Radio radio = new Radio(-1);
+        radio.setRadioWave(-1);
+        int actual = radio.getradioWave();
+        int expected = 0;
+        Assertions.assertEquals(expected,actual);
+    }
 
 }
